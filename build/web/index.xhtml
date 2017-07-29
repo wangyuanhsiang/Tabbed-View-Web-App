@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"    
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      >
+
+
+    <body>
+
+        <ui:composition template="./templateManager/template.xhtml">
+
+            <ui:define name="top">
+                <h2>Customer Information Data Entry</h2>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <p:messages />
+                    <h:panelGrid columns="1" style="width: 100%">
+                        <p:tabView>
+                            <p:tab title="Personal Information">
+                                <p:panelGrid columns="2">
+                                    <h:outputLabel for="firstName" value="First Name" styleClass="requiredLbl"/>
+                                    <h:inputText id="firstNmae" label="First Name" required="true"/> 
+
+                                    <h:outputLabel for="middleName" value="Middle Name" styleClass="optionalLbl"/>
+                                    <h:inputText id="middleName" label="Middle Name" /> 
+
+                                    <h:outputLabel for="lastName" value="Last Name" styleClass="requiredLbl"/>
+                                    <h:inputText id="lastName" label="Last Name" required="true"/>  
+
+                                    <h:outputLabel for="birthDate" value="Date of Birth" styleClass="optionalLbl"/>
+                                    <p:calendar id="birthDate" showOn="button" navigator="true" />
+                                </p:panelGrid>
+                            </p:tab>
+                            <p:tab title="Address">
+                                <p:panelGrid columns="2">
+                                    <h:outputLabel for="line1" value="Line 1" styleClass="requiredLbl"/>
+                                    <h:inputText id="line1" required="true"/>
+                                    
+                                    <h:outputLabel for="line2" value="Line 2" styleClass="optionalLbl"/>
+                                    <h:inputText id="line2" />
+                                    
+                                    <h:outputLabel for="city" value="City" styleClass="requiredLbl"/>
+                                    <h:inputText id="city" required="true"/>
+                                </p:panelGrid>
+                            </p:tab>
+                            <p:tab title="Phone Numbers">
+                                <p:panelGrid columns="2">
+
+                                </p:panelGrid>
+                            </p:tab>
+                        </p:tabView>
+                        <p:commandButton value="Submit" />
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
