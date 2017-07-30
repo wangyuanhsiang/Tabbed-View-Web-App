@@ -9,7 +9,7 @@
 
 
     <body>
-
+        <!--not yet build managbeens and controller 2017/07/29-->
         <ui:composition template="./templateManager/template.xhtml">
 
             <ui:define name="top">
@@ -40,17 +40,35 @@
                                 <p:panelGrid columns="2">
                                     <h:outputLabel for="line1" value="Line 1" styleClass="requiredLbl"/>
                                     <h:inputText id="line1" required="true"/>
-                                    
+
                                     <h:outputLabel for="line2" value="Line 2" styleClass="optionalLbl"/>
                                     <h:inputText id="line2" />
-                                    
+
                                     <h:outputLabel for="city" value="City" styleClass="requiredLbl"/>
                                     <h:inputText id="city" required="true"/>
+
+                                    <h:outputLabel for="state" value="province" styleClass="requiredLbl"/>
+                                    <h:selectOneMenu id="state" required="true">
+                                        <f:selectItem itemValue="" itemLabel=""/>
+                                        <f:selectItem itemValue="AB" itemLabel="Alberta" />
+                                        <f:selectItem itemValue="BC" itemLabel="British Columbia" />
+                                        <f:selectItem itemValue="NB" itemLabel="New Bruswick" />
+                                        <!--finish there later 2017/07/29-->
+                                    </h:selectOneMenu>
+                                    <h:outputLabel for="zip" value="Zip" styleClass="requiredLbl"/>
+                                    <h:inputText id="zip" required="true"/>
                                 </p:panelGrid>
                             </p:tab>
                             <p:tab title="Phone Numbers">
                                 <p:panelGrid columns="2">
+                                    <h:outputLabel for="homePhone" value="Home"/>
+                                    <p:inputMask id="hoomePhone" mask="(999)-999-9999" size="12" styleClass="optionalLbl" />
 
+                                    <h:outputLabel for="mobilePhone" value="Mobile"/>
+                                    <p:inputMask id="mobilePhone" mask="(999)-999-9999" size="12" styleClass="optionalLbl" />
+                                    
+                                    <h:outputLabel for="workPhone" value="Work"/>
+                                    <p:inputMask id="workPhone" mask="(999)-999-9999" size="12" styleClass="optionalLbl" />
                                 </p:panelGrid>
                             </p:tab>
                         </p:tabView>
